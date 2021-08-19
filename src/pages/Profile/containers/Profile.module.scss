@@ -1,0 +1,96 @@
+@import "./../../../styles/global.scss";
+
+.profile {
+    display: flex;
+
+    .photo {
+        margin: 55px 55px 0 0;
+        width: 122px;
+        height: 122px;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 3px solid #f2f2f7;
+        box-sizing: border-box;
+
+        img {
+            width: 100%;
+        }
+
+        overflow: hidden;
+    }
+
+    .personalData,
+    .security {
+        width: 370px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .personalData {
+        margin: 0 50px 0 0;
+    }
+
+    .title {
+        margin: 0 0 25px 0;
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            color: $color-grey;
+        }
+    }
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input {
+        width: 100%;
+
+        margin: 0 0 10px 0;
+    }
+
+    .inputTitle {
+        margin: 0 0 10px 0;
+        p {
+            font-size: 14px;
+            color: $color-secondary;
+        }
+    }
+
+    input {
+        padding: 0 20px;
+        width: 100%;
+
+        height: 50px;
+        border: 1px solid $color-link;
+        border-radius: 15px;
+
+        color: $color-black;
+
+        &::placeholder {
+            color: $color-link;
+        }
+    }
+
+    .buttons {
+        margin: 10px 0 0 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .button {
+        padding: 7px 15px;
+        margin: 0 20px 0 0;
+        border-radius: 100px;
+    }
+}

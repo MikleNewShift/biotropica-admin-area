@@ -1,0 +1,25 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .loaderLine {
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      rgb(120, 56, 179),
+      rgb(34, 129, 184),
+      rgb(51, 253, 93)
+    );
+    background-size: 100% 4px;
+    border-radius: 0px;
+    animation: loading 4s ease-in-out forwards;
+  }
+}
+
+@keyframes loading {
+  to {
+    width: 100%;
+  }
+}

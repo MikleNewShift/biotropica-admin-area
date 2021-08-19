@@ -1,0 +1,163 @@
+@import "./../../../styles/global.scss";
+
+.adminPanel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listPanel {
+    position: relative;
+    width: calc(100% - 220px);
+
+    background: #ffffff;
+    filter: drop-shadow(0px 0px 40px rgba(111, 97, 208, 0.11));
+
+    border-radius: 15px 15px 0 0;
+
+    transition: all 0.3s ease;
+
+    &.full {
+        width: 100%;
+    }
+}
+
+.titleLine {
+    padding: 0 16px;
+    width: 100%;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e4e4e7;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    h3 {
+        font-weight: 400;
+        font-size: 18px;
+        color: $color-black;
+    }
+}
+
+.counter {
+    margin: 0 0 0 8px;
+
+    padding: 0 6px;
+    height: 20px;
+
+    background-color: $color-divider;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+    p {
+        font-size: 14px;
+        color: $color-black;
+    }
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    padding: 0 8px;
+    width: 240px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #736f8b;
+    box-sizing: border-box;
+    border-radius: 100px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    input {
+        width: 196px;
+        height: 20px;
+
+        font-size: 14px;
+
+        border: none;
+
+        &::placeholder {
+            font-size: 14px;
+            color: #9895a7;
+        }
+    }
+}
+
+.searchIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoBar {
+    padding: 0 16px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: $color-divider;
+
+    .name {
+        width: 35%;
+    }
+
+    .date {
+        width: 20%;
+    }
+
+    .role {
+        width: 20%;
+    }
+
+    .tariff {
+        width: 25%;
+    }
+
+    p {
+        font-size: 14px;
+        color: $color-grey;
+
+        text-transform: uppercase;
+    }
+}
+
+.usersList {
+    width: 100%;
+
+    height: calc(100vh - 212px);
+
+    overflow-y: scroll;
+}
+
+.filter {
+    width: 200px;
+
+    overflow-y: scroll;
+
+    transition: all 0.3s ease;
+
+    &.hidden {
+        width: 0;
+    }
+
+    height: calc(100vh - 100px);
+}
