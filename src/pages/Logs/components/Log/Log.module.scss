@@ -8,7 +8,7 @@
     align-items: flex-start;
 
     .info {
-        margin: 0 40px 0 0;
+        margin: 0 10px 0 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -18,18 +18,29 @@
     .time {
         p {
             color: $color-grey;
+            font-size: 15px;
         }
     }
 
     .date {
-        margin: 0 20px 0 0;
+        margin: 0 10px 0 0;
+        p {
+            font-size: 15px;
+        }
     }
 
     .user {
-        margin: 0 40px 0 0;
+        margin: 0 10px 0 0;
+        p {
+            font-size: 15px;
+        }
     }
 
     .action {
-        max-width: 400px;
+        p {
+            font-size: 15px;
+        }
+
+        max-width: 180px;
     }
 }
