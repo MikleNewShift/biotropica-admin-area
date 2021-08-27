@@ -22,9 +22,9 @@ export const FilterField = ({ field }: Props) => {
 
   return (
     <div className={`${s.field} ${hidden ? s.hidden : {}}`}>
-      <div className={s.name}>
+      <div className={s.name} onClick={hideField}>
         <p>{field.name}</p>
-        <div className={s.arrowIcon} onClick={hideField}>
+        <div className={s.arrowIcon}>
           <svg
             width="13"
             height="14"

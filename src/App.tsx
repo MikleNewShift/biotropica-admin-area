@@ -25,6 +25,7 @@ import { ForgotForm } from "./pages/Auth/components/ForgotForm/ForgotForm";
 import { Loader } from "./shared/Global/Loader/Loader";
 import { LoadingStatus } from "./store/types";
 import { Header } from "./shared/Global/Header/Header";
+import { HeaderMobile } from "./shared/Global/HeaderMobile/HeaderMobile";
 import { Profile } from "./pages/Profile/containers/Profile";
 
 import { ErrorPage } from "./pages/404/containers/404";
@@ -45,6 +46,16 @@ function App() {
   const currentPath = location.pathname;
   const authPaths = ["/signin", "/signup"];
 
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    if (document.documentElement.clientWidth < 768) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  }, []);
+
   useEffect(() => {
     dispatch(fetchUserData());
   }, [isAuth]);
@@ -57,7 +68,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      {mobile ? <HeaderMobile /> : <Header />}
       <div className="page">
         <div className="wrapper">
           <Switch>

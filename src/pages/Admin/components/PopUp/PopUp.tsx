@@ -4,9 +4,10 @@ import s from "./PopUp.module.scss";
 
 interface Props {
   setPopup: Dispatch<SetStateAction<boolean>>;
+  popup: boolean;
 }
 
-export const PopUp = ({ setPopup }: Props) => {
+export const PopUp = ({ setPopup, popup }: Props) => {
   function closePopUp() {
     setPopup(false);
   }
@@ -18,7 +19,7 @@ export const PopUp = ({ setPopup }: Props) => {
   }
 
   return (
-    <div className={s.popupBg}>
+    <div className={`${s.popupBg} ${popup ? "" : s.hidden}`}>
       <form className={s.popup}>
         <div className={s.title}>
           <h2>Новый пользователь</h2>
@@ -55,7 +56,10 @@ export const PopUp = ({ setPopup }: Props) => {
           <div className={s.input}>
             <p>Роль</p>
             <div className={s.dropdown} onClick={showDropdown}>
-              <div className={s.dropdownText}>
+              <div
+                className={`${s.dropdownText}`}
+                style={dropdown ? { borderTop: "1px solid #736f8b" } : {}}
+              >
                 <p>Роль</p>
                 <div className="icon">
                   <svg
@@ -90,15 +94,16 @@ export const PopUp = ({ setPopup }: Props) => {
           </div>
         </div>
         <div className={s.btns}>
-          <div className={`${s.button} ${s.buttonPrimary} ${s.saveBtn}`}>
+          <button className={`${s.button} ${s.buttonPrimary} ${s.saveBtn}`}>
             <p>Сохранить</p>
-          </div>
-          <div
+          </button>
+          <button
+            type="button"
             className={`${s.button} ${s.buttonPrimary} ${s.cancelBtn}`}
             onClick={closePopUp}
           >
             <p>Отмена</p>
-          </div>
+          </button>
         </div>
       </form>
     </div>

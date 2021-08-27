@@ -3,6 +3,7 @@
 @import "variables.scss";
 @import "mixins.scss";
 @import "typography.scss";
+@import "breakpoints.scss";
 
 * {
   margin: 0;
@@ -34,6 +35,11 @@ input {
 .wrapper {
   width: 1380px;
   padding: 40px 0 0 0;
+
+  @include for-phone {
+    padding: 20px 0 0 0;
+    width: calc(100% - 20px);
+  }
 }
 
 .button {

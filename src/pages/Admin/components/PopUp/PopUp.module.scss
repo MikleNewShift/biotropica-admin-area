@@ -15,6 +15,29 @@
     background-color: rgba(0, 0, 0, 0.25);
 
     z-index: 1;
+
+    transition: all 0.3s ease;
+
+    @include for-phone {
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: flex-end;
+    }
+
+    &.hidden {
+        display: none;
+
+        @include for-phone {
+            display: flex;
+
+            background-color: #ffffff00;
+            user-select: none;
+            pointer-events: none;
+
+            .popup {
+                transform: translateY(100%);
+            }
+        }
+    }
 }
 
 .popup {
@@ -31,12 +54,29 @@
     border-radius: 30px;
 
     z-index: 10;
+
+    transition: all 0.3s ease;
+
+    @include for-phone {
+        padding: 20px;
+        height: unset;
+        width: 100%;
+
+        border-radius: 30px 30px 0 0;
+    }
+
     .title {
         width: 100%;
         display: flex;
         justify-content: center;
         h2 {
             @include Heading-1;
+        }
+
+        @include for-phone {
+            h2 {
+                font-size: 18px;
+            }
         }
     }
 
@@ -47,6 +87,10 @@
         margin: 25px 0 50px 0;
 
         background-color: $color-divider;
+
+        @include for-phone {
+            margin: 20px 0 30px 0;
+        }
     }
 
     .inputs {
@@ -65,6 +109,16 @@
 
         p {
             margin: 0 0 10px 0;
+            color: $color-grey;
+        }
+
+        @include for-phone {
+            width: 100%;
+            margin: 0 0 15px 0;
+
+            p {
+                margin: 0 0 5px 0;
+            }
         }
     }
 
@@ -76,11 +130,17 @@
 
         background-color: #ffffff;
 
+        outline: none;
+
         border: 1px solid #736f8b;
         box-sizing: border-box;
         border-radius: 15px;
 
         font-size: 16px;
+
+        @include for-phone {
+            width: 100%;
+        }
     }
 
     input::placeholder {
@@ -89,6 +149,7 @@
     }
 
     .dropdown {
+        padding: 0;
         position: relative;
         display: flex;
         align-items: center;
@@ -109,6 +170,12 @@
         align-items: center;
 
         z-index: -2;
+
+        @include for-phone {
+            button {
+                border-radius: 50px !important;
+            }
+        }
     }
 
     .saveBtn {
@@ -117,18 +184,27 @@
 }
 
 .dropdownText {
+    padding: 0 20px;
     width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include for-phone {
+        z-index: 2;
+    }
 }
 
 .dropdownConteiner {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -1px;
 
-    width: 100%;
+    width: calc(100% + 2px);
     height: 148px;
 
     padding: 48px 0 0 0;
@@ -145,12 +221,21 @@
 
     overflow: hidden;
 
-    transition: all 0.3s ease;
-
     &.hidden {
         height: 0;
-
         opacity: 0;
+        top: 148px;
+
+        @include for-phone {
+            z-index: -1;
+        }
+    }
+
+    @include for-phone {
+        top: -98px;
+        padding: 0 0 48px 0;
+
+        z-index: 1;
     }
 }
 

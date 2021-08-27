@@ -1,0 +1,35 @@
+@import "./../../../../styles/global.scss";
+
+.log {
+    margin: 0 0 15px 0;
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    .info {
+        margin: 0 40px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .date,
+    .time {
+        p {
+            color: $color-grey;
+        }
+    }
+
+    .date {
+        margin: 0 20px 0 0;
+    }
+
+    .user {
+        margin: 0 40px 0 0;
+    }
+
+    .action {
+        max-width: 400px;
+    }
+}

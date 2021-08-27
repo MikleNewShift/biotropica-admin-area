@@ -1,4 +1,5 @@
 @import "./../../../styles/global.scss";
+@import "./../../../styles/breakpoints.scss";
 
 .adminPanel {
     width: 100%;
@@ -20,6 +21,12 @@
     &.full {
         width: 100%;
     }
+
+    @include for-phone {
+        width: 100%;
+
+        filter: none;
+    }
 }
 
 .titleLine {
@@ -32,6 +39,59 @@
     justify-content: space-between;
 
     border-bottom: 1px solid #e4e4e7;
+
+    @include for-phone {
+        padding: 0;
+        border: none;
+        margin: 0 0 20px 0;
+        height: unset;
+        flex-direction: column;
+        align-items: center;
+        justify-content: unset;
+    }
+
+    .panelBtns {
+        @include for-phone {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .filterBtn {
+        .btnText {
+            @include for-phone {
+                display: none;
+            }
+        }
+
+        .btnIcon {
+            display: none;
+
+            @include for-phone {
+                display: block;
+            }
+        }
+
+        @include for-phone {
+            margin: 0;
+            padding: 0 10px;
+
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .createBtn {
+        @include for-phone {
+            width: calc(100% - 60px);
+            height: 34px;
+        }
+    }
 }
 
 .title {
@@ -41,6 +101,16 @@
         font-weight: 400;
         font-size: 18px;
         color: $color-black;
+    }
+
+    @include for-phone {
+        margin: 0 0 20px 0;
+        width: 100%;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 16px;
+        }
     }
 }
 
@@ -66,6 +136,16 @@
 .options {
     display: flex;
     align-items: center;
+
+    @include for-phone {
+        flex-wrap: wrap;
+    }
+}
+
+.xlsxBtn {
+    @include for-phone {
+        display: none;
+    }
 }
 
 .search {
@@ -98,12 +178,36 @@
             color: #9895a7;
         }
     }
-}
 
-.searchIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .searchIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include for-phone {
+        margin: 0 0 10px 0;
+        width: calc(100% - 44px);
+        height: 36px;
+
+        .searchIcon {
+            position: absolute;
+
+            right: 0;
+
+            width: 36px;
+            height: 36px;
+
+            border-radius: 50%;
+
+            background-color: $color-primary;
+
+            svg path {
+                fill: #ffffff;
+                stroke: #ffffff;
+            }
+        }
+    }
 }
 
 .infoBar {
@@ -138,12 +242,16 @@
 
         text-transform: uppercase;
     }
+
+    @include for-phone {
+        display: none;
+    }
 }
 
 .usersList {
     width: 100%;
 
-    height: calc(100vh - 212px);
+    height: calc(100vh - 221px);
 
     overflow-y: scroll;
 }
@@ -159,5 +267,38 @@
         width: 0;
     }
 
+    .container {
+        width: 200px;
+        @include for-phone {
+            width: calc(100% - 20px);
+            min-width: 300px;
+        }
+    }
+
     height: calc(100vh - 100px);
+
+    @include for-phone {
+        padding: 20px 0;
+        width: 100vw;
+        height: 100vh;
+
+        position: fixed;
+        top: 60px;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        z-index: 10;
+
+        background-color: #fff;
+    }
+}
+.closeIcon {
+    position: fixed;
+    top: 18px;
+    left: 10px;
+
+    z-index: 10;
 }
