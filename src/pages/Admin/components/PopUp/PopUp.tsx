@@ -72,9 +72,9 @@ export const PopUp = ({ setPopup, popup }: Props) => {
                     <path
                       d="M15 1.5L8 8.5L1 1.5"
                       stroke="#9895A7"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </div>

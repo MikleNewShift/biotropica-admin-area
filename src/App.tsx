@@ -41,12 +41,13 @@ function App() {
   const dispatch = useDispatch();
 
   const [redirect, setRedirect] = useState<boolean>(false);
-  const [page, setPage] = useState<string>("Главная");
 
   const currentPath = location.pathname;
   const authPaths = ["/signin", "/signup"];
 
   const [mobile, setMobile] = useState(false);
+
+  const [page, setPage] = useState<string>("Пользователи");
 
   useEffect(() => {
     if (document.documentElement.clientWidth < 768) {
@@ -66,9 +67,24 @@ function App() {
     dispatch(setUserResponse(undefined));
   }, [location.pathname]);
 
+  const [burger, setBurger] = useState(false);
+
+  useEffect(() => {
+    setBurger(false);
+  }, [location.pathname]);
+
   return (
     <>
-      {mobile ? <HeaderMobile /> : <Header />}
+      {mobile ? (
+        <HeaderMobile
+          burger={burger}
+          page={page}
+          setBurger={setBurger}
+          setPage={setPage}
+        />
+      ) : (
+        <Header />
+      )}
       <div className="page">
         <div className="wrapper">
           <Switch>

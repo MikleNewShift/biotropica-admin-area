@@ -9,11 +9,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: $color-white;
+  background-color: $color-white;
   font-family: "Montserrat", sans-serif;
+
+  @include for-phone {
+    position: fixed;
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 a,

@@ -34,33 +34,160 @@
 .burger {
     position: absolute;
 
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 10px;
 
-    .burgeIcon {
-        position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .burgerIcon {
+        width: 21px;
+        height: 21px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
     }
 
     .topStick,
     .middleStick,
     .bottomStick {
-        position: absolute;
+        position: relative;
         width: 20px;
         height: 2px;
 
         background-color: $color-secondary;
+
+        transition: all 0.2s ease;
     }
 
-    .middleStick {
-        top: 5px;
+    .burgerActive {
+        .topStick {
+            top: 6px;
+            transform: rotate(-45deg);
+        }
+
+        .middleStick {
+            transform: rotate(0);
+            opacity: 0;
+        }
+
+        .bottomStick {
+            top: -6px;
+            transform: rotate(45deg);
+        }
     }
-    .bottomStick {
-        top: 10px;
+}
+
+.burgerMenu {
+    position: absolute;
+
+    width: 100%;
+    height: calc(100vh - 60px);
+
+    z-index: 10;
+
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+
+    transform: translateX(100%);
+
+    transition: all 0.3s ease;
+
+    &.burgerActive {
+        transform: translateX(0);
+    }
+
+    .container {
+        width: calc(100% - 20px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .userInfo {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+
+        .photo {
+            width: 35px;
+            height: 35px;
+
+            border: 2px solid #f2f2f7;
+            box-sizing: border-box;
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .name {
+            margin: 0 0 0 5px;
+            p {
+                font-weight: 400;
+                font-size: 16px;
+
+                color: $color-black;
+            }
+        }
+    }
+
+    .burgerNav {
+        margin: 20px 0 0 0;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .link {
+            position: relative;
+            width: 100%;
+            padding: 14px 0 13px 0;
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid $color-divider;
+
+            font-weight: 400;
+            font-size: 16px;
+
+            color: $color-black;
+
+            text-decoration: none;
+        }
+
+        .icon {
+            margin: 0 20px 0 0;
+        }
+
+        .counter {
+            height: 100%;
+            position: absolute;
+            right: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                color: $color-primary;
+            }
+        }
     }
 }

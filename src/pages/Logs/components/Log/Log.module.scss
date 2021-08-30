@@ -2,45 +2,30 @@
 
 .log {
     margin: 0 0 15px 0;
-    width: 100%;
 
-    display: flex;
-    align-items: flex-start;
-
-    .info {
-        margin: 0 10px 0 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    p {
+        font-size: 15px;
+        line-height: 21px;
     }
 
     .date,
     .time {
-        p {
-            color: $color-grey;
-            font-size: 15px;
+        margin: 0 10px 0 0;
+        color: $color-grey;
+
+        @include for-phone {
+            margin: 0 15px 0 0;
         }
     }
 
     .date {
-        margin: 0 10px 0 0;
-        p {
-            font-size: 15px;
-        }
     }
 
     .user {
         margin: 0 10px 0 0;
-        p {
-            font-size: 15px;
-        }
     }
 
     .action {
-        p {
-            font-size: 15px;
-        }
-
-        max-width: 174px;
+        color: $color-primary;
     }
 }

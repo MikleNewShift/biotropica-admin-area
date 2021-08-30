@@ -58,7 +58,7 @@
     transition: all 0.3s ease;
 
     @include for-phone {
-        padding: 20px;
+        padding: 20px 20px 60px 20px;
         height: unset;
         width: 100%;
 

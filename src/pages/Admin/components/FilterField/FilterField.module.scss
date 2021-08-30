@@ -3,6 +3,10 @@
 .field {
     width: 100%;
     min-width: 200px;
+
+    &:last-child {
+        padding: 0 0 60px 0;
+    }
 }
 
 .name {

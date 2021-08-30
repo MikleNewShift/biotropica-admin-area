@@ -249,15 +249,19 @@
 }
 
 .usersList {
+    padding: 0 0 60px 0;
     width: 100%;
 
     height: calc(100vh - 221px);
 
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
 .filter {
     width: 200px;
+
+    padding: 0 0 60px 0;
 
     overflow-y: scroll;
 
@@ -265,6 +269,11 @@
 
     &.hidden {
         width: 0;
+
+        @include for-phone {
+            width: 100vw;
+            transform: translateX(-100%);
+        }
     }
 
     .container {
@@ -290,7 +299,9 @@
         flex-direction: column;
         align-items: center;
 
-        z-index: 10;
+        z-index: 1;
+
+        transform: translateX(0);
 
         background-color: #fff;
     }

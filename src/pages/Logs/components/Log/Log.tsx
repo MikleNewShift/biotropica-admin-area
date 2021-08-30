@@ -15,21 +15,11 @@ interface Props {
 
 export const Log = ({ log }: Props) => {
   return (
-    <div className={s.log}>
-      <div className={s.info}>
-        <div className={s.date}>
-          <p>{log.date}</p>
-        </div>
-        <div className={s.time}>
-          <p>{log.time}</p>
-        </div>
-      </div>
-      <div className={s.user}>
-        <p>{log.user}</p>
-      </div>
-      <div className={s.action}>
-        <p>{log.action}</p>
-      </div>
-    </div>
+    <p className={s.log}>
+      <span className={s.date}>{log.date}</span>
+      <span className={s.time}>{log.time}</span>
+      <span className={s.user}>{log.user}</span>
+      <span className={s.action}>{log.action}</span>
+    </p>
   );
 };

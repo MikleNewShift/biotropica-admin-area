@@ -3,6 +3,39 @@
 .profile {
     display: flex;
 
+    @include for-phone {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .tabs {
+        margin: 0 0 35px 0;
+        width: 200vw;
+        display: inline-flex;
+    }
+
+    .tab {
+        margin: 0 10px 0 0;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        padding: 7px 15px;
+
+        background-color: $color-divider;
+        color: $color-grey;
+        border-radius: 10px;
+    }
+
+    .tabActive {
+        background-color: #a59ce2;
+        p {
+            color: #ffffff;
+        }
+    }
+
     .photo {
         margin: 55px 55px 0 0;
         width: 122px;
@@ -21,6 +54,10 @@
             width: 100%;
         }
 
+        @include for-phone {
+            margin: 0 0 20px 0;
+        }
+
         overflow: hidden;
     }
 
@@ -31,10 +68,20 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
+        @include for-phone {
+            width: 100%;
+        }
     }
 
     .personalData {
         margin: 0 50px 0 0;
+
+        @media (max-height: 700px) {
+            padding: 0 0 60px 0;
+            height: calc(100vh - 260px);
+            overflow: scroll;
+        }
     }
 
     .title {
@@ -44,6 +91,10 @@
             font-size: 18px;
             font-weight: 500;
             color: $color-grey;
+        }
+
+        @include for-phone {
+            display: none;
         }
     }
 
